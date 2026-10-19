@@ -243,7 +243,7 @@
                 </div>
                 <!-- Chart Produksi -->
                 <div class="glass-card rounded-2xl p-6 shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 border-b border-slate-100 pb-4">Grafik Produksi (Pcs)</h3>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 border-b border-slate-100 pb-4">Grafik Produksi (Meter)</h3>
                     <div class="relative w-full h-[250px] sm:h-[300px] md:h-[350px]">
                         <canvas id="prodChart"></canvas>
                     </div>
@@ -262,7 +262,7 @@
                                 <th class="py-3 px-6 font-bold border-b border-slate-200">Bulan</th>
                                 <th class="py-3 px-6 font-bold border-b border-slate-200 text-right">MTBF (Jam)</th>
                                 <th class="py-3 px-6 font-bold border-b border-slate-200 text-right">MTTR (Jam)</th>
-                                <th class="py-3 px-6 font-bold border-b border-slate-200 text-right">Produksi (Pcs)</th>
+                                <th class="py-3 px-6 font-bold border-b border-slate-200 text-right">Produksi (Meter)</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm divide-y divide-slate-100" id="mtbfTableBody">
@@ -278,28 +278,28 @@
 
         // DATA MTBF, MTTR, PRODUKSI
         const MTBF_DATA = [
-            { tahun: 2025, bulan: 'JANUARI', mtbf: 235.83, mttr: 0.45, prod: 120840 },
-            { tahun: 2025, bulan: 'FEBRUARI', mtbf: 148.61, mttr: 0.48, prod: 247360 },
-            { tahun: 2025, bulan: 'MARET', mtbf: 157.14, mttr: 0.49, prod: 317280 },
-            { tahun: 2025, bulan: 'APRIL', mtbf: 113.42, mttr: 0.47, prod: 170540 },
-            { tahun: 2025, bulan: 'MEI', mtbf: 540.84, mttr: 0.49, prod: 341040 },
-            { tahun: 2025, bulan: 'JUNI', mtbf: 218.84, mttr: 0.36, prod: 234880 },
-            { tahun: 2025, bulan: 'JULI', mtbf: 541.87, mttr: 0.41, prod: 300200 },
-            { tahun: 2025, bulan: 'AGUSTUS', mtbf: 604.73, mttr: 0.62, prod: 282420 },
-            { tahun: 2025, bulan: 'SEPTEMBER', mtbf: 382.70, mttr: 1.52, prod: 332640 },
-            { tahun: 2025, bulan: 'OKTOBER', mtbf: 252.98, mttr: 0.66, prod: 335720 },
-            { tahun: 2025, bulan: 'NOVEMBER', mtbf: 276.49, mttr: 0.34, prod: 341820 },
-            { tahun: 2025, bulan: 'DESEMBER', mtbf: 0.00, mttr: 0.00, prod: 354320 },
-            { tahun: 2026, bulan: 'JANUARI', mtbf: 556.75, mttr: 0.77, prod: 362060 },
-            { tahun: 2026, bulan: 'FEBRUARI', mtbf: 1016.03, mttr: 0.33, prod: 338800 },
-            { tahun: 2026, bulan: 'MARET', mtbf: 352.72, mttr: 0.58, prod: 136200 },
-            { tahun: 2026, bulan: 'APRIL', mtbf: 362.32, mttr: 0.32, prod: 304980 },
-            { tahun: 2026, bulan: 'MEI', mtbf: 301.75, mttr: 0.45, prod: 274360 },
-            { tahun: 2026, bulan: 'JUNI', mtbf: 359.60, mttr: 0.56, prod: 434340 },
-            { tahun: 2026, bulan: 'JULI', mtbf: 296.05, mttr: 0.45, prod: 522260 },
-            { tahun: 2026, bulan: 'AGUSTUS', mtbf: 265.55, mttr: 0.46, prod: 407040 },
-            { tahun: 2026, bulan: 'SEPTEMBER', mtbf: 1221.70, mttr: 0.17, prod: 466080 },
-            { tahun: 2026, bulan: 'OKTOBER', mtbf: 0.00, mttr: 0.00, prod: 207060 }
+            { tahun: 2025, bulan: 'JANUARI', mtbf: 235.83, mttr: 0.45, prod: 265850 },
+            { tahun: 2025, bulan: 'FEBRUARI', mtbf: 148.61, mttr: 0.48, prod: 544174 },
+            { tahun: 2025, bulan: 'MARET', mtbf: 157.14, mttr: 0.49, prod: 698010 },
+            { tahun: 2025, bulan: 'APRIL', mtbf: 113.42, mttr: 0.47, prod: 375218 },
+            { tahun: 2025, bulan: 'MEI', mtbf: 540.84, mttr: 0.49, prod: 750307 },
+            { tahun: 2025, bulan: 'JUNI', mtbf: 218.84, mttr: 0.36, prod: 516720 },
+            { tahun: 2025, bulan: 'JULI', mtbf: 541.87, mttr: 0.41, prod: 660446 },
+            { tahun: 2025, bulan: 'AGUSTUS', mtbf: 604.73, mttr: 0.62, prod: 621303 },
+            { tahun: 2025, bulan: 'SEPTEMBER', mtbf: 382.70, mttr: 1.52, prod: 738594 },
+            { tahun: 2025, bulan: 'OKTOBER', mtbf: 252.98, mttr: 0.66, prod: 520031 },
+            { tahun: 2025, bulan: 'NOVEMBER', mtbf: 276.49, mttr: 0.34, prod: 779499 },
+            { tahun: 2025, bulan: 'DESEMBER', mtbf: 0.00, mttr: 0.00, prod: 796530 },
+            { tahun: 2026, bulan: 'JANUARI', mtbf: 556.75, mttr: 0.77, prod: 796530 },
+            { tahun: 2026, bulan: 'FEBRUARI', mtbf: 1016.03, mttr: 0.33, prod: 728377 },
+            { tahun: 2026, bulan: 'MARET', mtbf: 352.72, mttr: 0.58, prod: 299652 },
+            { tahun: 2026, bulan: 'APRIL', mtbf: 362.32, mttr: 0.32, prod: 642449 },
+            { tahun: 2026, bulan: 'MEI', mtbf: 301.75, mttr: 0.45, prod: 603585 },
+            { tahun: 2026, bulan: 'JUNI', mtbf: 359.60, mttr: 0.56, prod: 955767 },
+            { tahun: 2026, bulan: 'JULI', mtbf: 296.05, mttr: 0.45, prod: 1088934 },
+            { tahun: 2026, bulan: 'AGUSTUS', mtbf: 265.55, mttr: 0.46, prod: 895496 },
+            { tahun: 2026, bulan: 'SEPTEMBER', mtbf: 1221.70, mttr: 0.17, prod: 1025370 },
+            { tahun: 2026, bulan: 'OKTOBER', mtbf: 0.00, mttr: 0.00, prod: 498261 }
         ];
 
         // DATA DEPARTEMEN (ALL MESIN)
@@ -1254,7 +1254,7 @@
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Produksi (Pcs)',
+                            label: 'Produksi (Meter)',
                             data: prodData,
                             backgroundColor: '#10b981',
                             borderRadius: 4
@@ -1281,7 +1281,7 @@
                     scales: {
                         y: {
                             beginAtZero: true,
-                            title: { display: true, text: 'Total Pcs' },
+                            title: { display: true, text: 'Total Meter' },
                             suggestedMax: Math.max(...prodData) * 1.15 // Memberi space di atas agar datalabels tidak terpotong
                         }
                     }
