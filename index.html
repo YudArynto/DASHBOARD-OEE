@@ -707,9 +707,9 @@
             }
 
             // --- JIKA FILTER = ALL MESIN (Keseluruhan Departemen) ---
-            if (selectedYear === '2024') return PARETO_DATA_2024;
-            if (selectedYear === '2025') return PARETO_DATA_2025;
-            if (selectedYear === '2026') return PARETO_DATA_2026;
+            if (selectedYear === '2024') return PARETO_DATA_2024.sort((a, b) => b.menit - a.menit);
+            if (selectedYear === '2025') return PARETO_DATA_2025.sort((a, b) => b.menit - a.menit);
+            if (selectedYear === '2026') return PARETO_DATA_2026.sort((a, b) => b.menit - a.menit);
             
             // "ALL TAHUN": Gabungkan Data Departemen 2024 + 2025 + 2026
             const combined = {};
