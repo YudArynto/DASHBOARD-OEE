@@ -299,7 +299,7 @@
             { tahun: 2026, bulan: 'JULI', mtbf: 296.05, mttr: 0.45, prod: 1088934 },
             { tahun: 2026, bulan: 'AGUSTUS', mtbf: 265.55, mttr: 0.46, prod: 895496 },
             { tahun: 2026, bulan: 'SEPTEMBER', mtbf: 1221.70, mttr: 0.17, prod: 1025370 },
-            { tahun: 2026, bulan: 'OKTOBER', mtbf: 0.00, mttr: 0.00, prod: 498261 }
+            { tahun: 2026, bulan: 'OKTOBER', mtbf: 838.75, mttr: 0.23, prod: 708443 }
         ];
 
         // DATA DEPARTEMEN (ALL MESIN)
@@ -342,7 +342,7 @@
             { tahun: 2026, bulan: 'JULI', a: 79.51, p: 94.73, q: 96.25, oee: 72.50 },
             { tahun: 2026, bulan: 'AGUSTUS', a: 79.18, p: 95.32, q: 95.93, oee: 72.40 },
             { tahun: 2026, bulan: 'SEPTEMBER', a: 80.81, p: 93.90, q: 96.02, oee: 72.86 },
-            { tahun: 2026, bulan: 'OKTOBER', a: 78.68, p: 95.67, q: 96.14, oee: 72.36 }
+            { tahun: 2026, bulan: 'OKTOBER', a: 79.21, p: 96.12, q: 96.25, oee: 73.28 }
         ];
 
         const MACHINE_DATA = [
@@ -498,23 +498,23 @@
         ];
 
         const PARETO_DATA_2026 = [
-            { penyebab: 'Kress Skier', menit: 31593, persen: 33.16 },
-            { penyebab: 'Ganti Corak', menit: 27358, persen: 28.72 },
-            { penyebab: 'Putus Benang', menit: 19694, persen: 20.67 },
-            { penyebab: 'Doffing Benang', menit: 11648, persen: 12.23 },
-            { penyebab: 'Cucuk Skier', menit: 1514, persen: 1.59 },
-            { penyebab: 'Mecah Benang', menit: 838, persen: 0.88 },
-            { penyebab: 'Breakdown Mechanical', menit: 469, persen: 0.49 },
-            { penyebab: 'Creeling Ulang', menit: 469, persen: 0.49 },
-            { penyebab: 'Cucuk Ulang', menit: 315, persen: 0.33 },
-            { penyebab: 'Adjust Skala', menit: 254, persen: 0.27 },
-            { penyebab: 'Ganti Cucukan', menit: 241, persen: 0.25 },
-            { penyebab: 'Tarik Benang', menit: 220, persen: 0.23 },
-            { penyebab: 'Breakdown Electrical', menit: 194, persen: 0.20 },
-            { penyebab: 'Tambah Helai', menit: 163, persen: 0.17 },
-            { penyebab: 'Cleaning', menit: 107, persen: 0.11 },
-            { penyebab: 'Tunggu Beam Kosong', menit: 96, persen: 0.10 },
-            { penyebab: 'Tunggu Ikt', menit: 70, persen: 0.07 },
+            { penyebab: 'Kress Skier', menit: 44647, persen: 34.34 },
+            { penyebab: 'Ganti Corak', menit: 35753, persen: 27.50 },
+            { penyebab: 'Putus Benang', menit: 26422, persen: 20.32 },
+            { penyebab: 'Doffing Benang', menit: 17038, persen: 13.10 },
+            { penyebab: 'Cucuk Skier', menit: 1824, persen: 1.40 },
+            { penyebab: 'Creeling Ulang', menit: 666, persen: 0.51 },
+            { penyebab: 'Adjust Skala', menit: 510, persen: 0.39 },
+            { penyebab: 'Breakdown Mechanical', menit: 483, persen: 0.37 },
+            { penyebab: 'Cucuk Ulang', menit: 347, persen: 0.27 },
+            { penyebab: 'Ganti Cucukan', menit: 334, persen: 0.26 },
+            { penyebab: 'Tunggu Beam Kosong', menit: 126, persen: 0.10 },
+            { penyebab: 'Mecah Benang', menit: 838, persen: 0.65 },
+            { penyebab: 'Tarik Benang', menit: 220, persen: 0.17 },
+            { penyebab: 'Breakdown Electrical', menit: 194, persen: 0.15 },
+            { penyebab: 'Tambah Helai', menit: 163, persen: 0.13 },
+            { penyebab: 'Cleaning', menit: 107, persen: 0.08 },
+            { penyebab: 'Tunggu Ikt', menit: 70, persen: 0.05 },
             { penyebab: 'Setting Stop Motion', menit: 21, persen: 0.02 }
         ];
 
@@ -1193,7 +1193,14 @@
                             datalabels: {
                                 display: true,
                                 color: '#3b82f6',
-                                align: 'top',
+                                align: function(context) {
+                                    if (context.dataIndex === 0) return 'right';
+                                    if (context.dataIndex === context.dataset.data.length - 1) return 'left';
+                                    return 'top';
+                                },
+                                backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                                borderRadius: 4,
+                                offset: 6,
                                 formatter: function(value) { return value > 0 ? value.toFixed(1) : '0'; },
                                 font: { size: 10, weight: 'bold', family: 'Inter' }
                             }
@@ -1209,7 +1216,14 @@
                             datalabels: {
                                 display: true,
                                 color: '#f97316',
-                                align: 'bottom',
+                                align: function(context) {
+                                    if (context.dataIndex === 0) return 'right';
+                                    if (context.dataIndex === context.dataset.data.length - 1) return 'left';
+                                    return 'bottom';
+                                },
+                                backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                                borderRadius: 4,
+                                offset: 6,
                                 formatter: function(value) { return value > 0 ? value.toFixed(2) : '0'; },
                                 font: { size: 10, weight: 'bold', family: 'Inter' }
                             }
